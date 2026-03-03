@@ -2,28 +2,41 @@
 
 ![Python Version](https://img.shields.io/badge/python-3.12-blue.svg)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.134.0-009688.svg)](https://fastapi.tiangolo.com/)
-[![React](https://img.shields.io/badge/React-18-61DAFB.svg)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB.svg)](https://react.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Lint Status](https://github.com/WeldonPereira/educational-resources-hub/actions/workflows/lint.yml/badge.svg)
 
 O **Educational Resources Hub** é uma plataforma fullstack moderna projetada para centralizar e gerenciar materiais didáticos.  
 O diferencial do sistema é o recurso **Smart Assist**, que utiliza **Inteligência Artificial** para sugerir descrições pedagógicas e categorizações automáticas, otimizando o trabalho dos curadores de conteúdo.
+
+# 🎬 Demonstração do Projeto
+
+## Vídeo em execução do sistema
+
+https://github.com/user-attachments/assets/9117e18d-baab-4dc4-b714-5aa14db5c319
+
+
+## Terminal do Backend em execução
+
+<img width="809" height="151" alt="Captura de tela 2026-03-03 085758" src="https://github.com/user-attachments/assets/4e6f948a-1991-475b-ad48-4b9be90fc237" />
 
 # Tecnologias Utilizadas
 
 ## Backend
 
-- **FastAPI**: Framework de alta performance para a API RESTful.
-- **SQLAlchemy & Alembic**: ORM e controle de versões do banco de dados MySQL.
-- **Pydantic v2**: Validação rigorosa de dados e configurações.
-- **Google Gemini API**: Integração com LLM para inteligência artificial.
+- **FastAPI** — Framework de alta performance para construção da API RESTful.
+- **SQLAlchemy & Alembic** — ORM e controle de versões do banco de dados MySQL.
+- **Pydantic v2** — Validação rigorosa de dados e configurações.
+- **Google Gemini API** — Integração com LLM para geração inteligente de descrições.
 
 ## Frontend
 
-- **React + TypeScript**: SPA rápida e tipada.
-- **Vite**: Ferramenta de build de última geração.
-- **Axios**: Cliente HTTP com interceptores de BaseURL.
+- **React + TypeScript** — Aplicação SPA rápida, moderna e tipada.
+- **Vite** — Ferramenta de build de alta performance para desenvolvimento.
+- **Axios** — Cliente HTTP configurado com interceptors e BaseURL.
 
 # 📁 Estrutura do Projeto
+
 
 ```
 educational-resources-hub
@@ -70,7 +83,7 @@ educational-resources-hub
 │   │   ├── App.tsx
 │   │   ├── index.css
 │   │   ├── main.tsx
-│   │   └── router.txs
+│   │   └── router.tsx
 │   ├── .gitignore
 │   ├── eslint.config.js
 │   ├── index.html
@@ -82,6 +95,7 @@ educational-resources-hub
 │   ├── tsconfig.node.json
 │   └── vite.config.ts
 │
+└── .flake8
 └── .gitignore
 └── README.md
 ```
@@ -120,9 +134,22 @@ pip install -r requirements.txt
 ### 3. Configure o arquivo `.env` (use o `.env.example` como base)
 
 ```env
-DATABASE_URL=mysql+pymysql://user:pass@localhost:3306/db_name
-AI_PROVIDER=gemini  # ou 'mock' para testes sem API
-AI_API_KEY=sua_chave_do_google_gemini
+DATABASE_URL=mysql+pymysql://user:password@localhost:3306/db_name
+
+APP_ENV=development
+APP_NAME="Educational Resources Hub"
+
+AI_PROVIDER=gemini
+AI_ENABLED=true
+
+AI_API_KEY=sua_chave
+```
+### 3.5 Criar o Banco de Dados
+
+**Antes de prosseguir, acesse seu terminal do MySQL ou uma ferramenta visual (como o MySQL Workbench) e crie o schema:**
+
+```sql
+CREATE DATABASE educational_hub;
 ```
 
 ### 4. Execute as migrações do banco de dados
@@ -156,8 +183,9 @@ npm run dev
 
 Para uma compreensão aprofundada das escolhas de engenharia e da estrutura do projeto, consulte os documentos abaixo:
 
-**[Arquitetura do Sistema](docs/architecture.md)**: Detalhamento das camadas (API, Service, Repository), fluxo de dados e integração com a IA.
-**[Decisões Arquiteturais (ADRs)](docs/decisions.md)**: Registro das motivações por trás da escolha do FastAPI, estratégia de fallback da IA e otimizações de performance (como a solução do problema N+1).
+- **[Arquitetura do Sistema](docs/architecture.md)**: Detalhamento das camadas (API, Service, Repository), fluxo de dados e integração com a IA.
+
+- **[Decisões Arquiteturais (ADRs)](docs/decisions.md)**: Registro das motivações por trás da escolha do FastAPI, estratégia de fallback da IA e otimizações de performance (como a solução do problema N+1).
 
 # 🧠 Funcionalidades em Destaque
 
@@ -173,9 +201,7 @@ Para uma compreensão aprofundada das escolhas de engenharia e da estrutura do p
 # 📊 Observabilidade e DevOps
 
 - **Logs Estruturados**: O backend registra a latência das requisições de IA e o status de cada operação, facilitando o monitoramento de performance.
--
 - **Health Check**: Endpoint disponível em `/health` para monitoramento de disponibilidade.
--
 - **CI/CD**: Pipeline do GitHub Actions configurada para rodar Linters (`black`, `flake8`) a cada push, garantindo a qualidade do código.
 
 # 🛠️ Diferenciais Técnicos
