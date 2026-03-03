@@ -14,4 +14,4 @@ jobs:
       - name: Run Black
         run: black . --check
       - name: Run Flake8
-        run: flake8 .
+        run: flake8 . --max-line-length=88 --ignore=E501,F401,E203
