@@ -33,14 +33,14 @@ class ResourceRepository:
     @staticmethod
     def get_or_create_tags(db: Session, tag_names):
         unique_names = list(set([name.strip() for name in tag_names if name.strip()]))
-        
+
         tags = []
         for name in unique_names:
             tag = db.query(Tag).filter(Tag.name == name).first()
             if not tag:
                 tag = Tag(name=name)
                 db.add(tag)
-                db.commit() 
+                db.commit()
                 db.refresh(tag)
             tags.append(tag)
         return tags
