@@ -18,22 +18,34 @@ https://github.com/user-attachments/assets/9117e18d-baab-4dc4-b714-5aa14db5c319
 
 ## Terminal do Backend em execução
 
-<img width="809" height="151" alt="Captura de tela 2026-03-03 085758" src="https://github.com/user-attachments/assets/4e6f948a-1991-475b-ad48-4b9be90fc237" />
+<img width="818" height="155" alt="Captura de tela 2026-03-04 074149" src="https://github.com/user-attachments/assets/cd01f960-011d-4ddf-9a3a-5d7c472a85b7" />
 
-# Tecnologias Utilizadas
+# 🚀 Tecnologias Utilizadas
 
 ## Backend
 
-- **FastAPI** — Framework de alta performance para construção da API RESTful.
-- **SQLAlchemy & Alembic** — ORM e controle de versões do banco de dados MySQL.
-- **Pydantic v2** — Validação rigorosa de dados e configurações.
-- **Google Gemini API** — Integração com LLM para geração inteligente de descrições.
+- **FastAPI (v0.134.0)**: Core da aplicação, utilizado por sua alta performance e suporte nativo a operações assíncronas, garantindo endpoints rápidos e documentação automática via Swagger.
+- **SQLAlchemy (v2.0.47)**: Implementação de ORM com mapeamento declarativo, utilizando o padrão *Repository* para isolar a lógica de persistência.
+- **Alembic (v1.18.4)**: Gestão estratégica de migrações de banco de dados, assegurando o versionamento e a integridade do esquema MySQL.
+- **Pydantic V2 (v2.12.5)**: Motor de validação de dados e serialização, garantindo que o contrato da API seja estritamente respeitado.
+- **Google GenAI (v1.65.0)**: Integração avançada com o modelo **Gemini**, utilizando *Prompt Engineering* para o recurso **Smart Assist** de descrição pedagógica.
+- **Uvicorn (v0.41.0)**: Servidor ASGI de nível de produção para execução da aplicação de forma concorrente.
+- **PyMySQL (v1.1.2)**: Driver de conexão eficiente para comunicação robusta com o banco de dados MySQL.
 
-## Frontend
+## Frontend 
 
-- **React + TypeScript** — Aplicação SPA rápida, moderna e tipada.
-- **Vite** — Ferramenta de build de alta performance para desenvolvimento.
-- **Axios** — Cliente HTTP configurado com interceptors e BaseURL.
+- **React (v19.2.0) + TypeScript**: Desenvolvimento baseado em componentes reutilizáveis com tipagem estrita, elevando a segurança e manutenibilidade do código.
+- **Vite**: *Toolchain* de última geração que proporciona um ambiente de desenvolvimento instantâneo e builds otimizados.
+- **Tailwind CSS (v4.2.1)**: Framework utilitário para estilização responsiva e design system consistente, integrado via `@tailwindcss/vite`.
+- **Framer Motion (v12.34.4)**: Biblioteca de animações potente para transições de página fluidas e micro-interações que enriquecem a experiência do usuário.
+- **Axios (v1.13.6)**: Cliente HTTP para comunicação com a API, configurado com interceptadores para tratamento global de erros.
+- **React Router Dom (v7.13.1)**: Gestão de rotas dinâmica e protegida para navegação fluida entre Dashboard e telas de gestão.
+- **React Toastify (v11.0.5)**: Sistema de notificações inteligentes para feedback imediato de ações (Sucesso, Erro, Alerta).
+
+## Qualidade & DevOps
+
+- **Black (v26.1.0)**: O "uncompromising code formatter" que garante um estilo visual único e padronizado em todo o backend.
+- **Flake8 (v7.3.0)**: Linter rigoroso para conformidade com a **PEP 8**, garantindo um código limpo, sem redundâncias e seguindo as melhores práticas da comunidade Python.
 
 # 📁 Estrutura do Projeto
 
@@ -149,7 +161,7 @@ AI_API_KEY=sua_chave
 **Antes de prosseguir, acesse seu terminal do MySQL ou uma ferramenta visual (como o MySQL Workbench) e crie o schema:**
 
 ```sql
-CREATE DATABASE educational_hub;
+CREATE DATABASE db_name;
 ```
 
 ### 4. Execute as migrações do banco de dados
@@ -240,3 +252,8 @@ Exemplo de log:
 
 - **Variáveis de Ambiente**: Nenhuma chave de API ou credencial de banco de dados está exposta no código fonte.
 - **CORS**: Configurado estritamente para permitir apenas comunicações do frontend autorizado.
+
+## 📘 Educational Resources Hub | V-LAB UFPE Case
+> **Projeto desenvolvido como Desafio Técnico para a vaga de Desenvolvedor Fullstack no V-LAB – UFPE.**
+
+Desenvolvido por [Weldon Pereira](https://github.com/WeldonPereira)
