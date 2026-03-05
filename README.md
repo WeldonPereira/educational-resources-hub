@@ -4,7 +4,6 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.134.0-009688.svg)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/React-18-61DAFB.svg)](https://react.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Lint Status](https://github.com/WeldonPereira/educational-resources-hub/actions/workflows/lint.yml/badge.svg)
 
 O **Educational Resources Hub** é uma plataforma fullstack moderna projetada para centralizar e gerenciar materiais didáticos.  
 O diferencial do sistema é o recurso **Smart Assist**, que utiliza **Inteligência Artificial** para sugerir descrições pedagógicas e categorizações automáticas, otimizando o trabalho dos curadores de conteúdo.
@@ -178,10 +177,10 @@ uvicorn app.main:app --reload
 
 ## 3. Configuração do Frontend
 
-### 1. Entre na pasta e instale os pacotes
+### 1. Em outro terminal, entre na pasta e instale os pacotes
 
 ```bash
-cd ../frontend
+cd frontend
 npm install
 ```
 
